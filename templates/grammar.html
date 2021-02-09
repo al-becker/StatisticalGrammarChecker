@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GrammarChecker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="{{ url_for('static', filename='script.js') }}" async></script>
+</head>
+<body>
+<div id="app">
+    <p id="headline">Grammar<b>Checker</b></p>
+    <div id="grammarcontainer">
+        <div id="topbar">
+            <select name="dropdown" id="dropdown">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+            <div class="push"></div>
+            <label class="switch">
+                <input id="debug-check" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span class="debug"> Debug </span>
+            <span class="button delete">
+                <i class="material-icons">delete</i>
+                Delete text
+            </span>
+            <span id="grammar" class="button grammar">
+                <i class="material-icons">spellcheck</i>
+                Grammar check
+            </span>
+        </div>
+        <div id="content" contentEditable=true data-text="Enter text here..."></div>
+        <div id="bottombar">Right click on a mistake to show correction suggestions<div class="push"></div>0 characters, 0 words  <i class="material-icons">info</i></div>
+        <div id="tooltip">
+            <h3><b>Info</b></h3>
+            Correction suggestions are ranked from most to least likely. With debug "on" the scores from BERT and the calculated rank is shown. The higher the rank, the higher the model estimates the probability that it is the word intended by the user.
+        </div>
+        <div class="context-menu" contentEditable=false>
+            <ul id="context-ul">
+            </ul>
+        </div>
+        <input type="hidden" value="" id="txt_id">
+    </div>
+    <div id="ngramcount"></div>
+    <div class="modal"></div>
+</div>
+</body>
+</html>

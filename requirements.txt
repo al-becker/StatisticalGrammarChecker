@@ -1,0 +1,7 @@
+flask
+lxml
+requests
+transformers==4.1.1
+psycopg2==2.8.5
+tensorflow==2.3.0
+distance
