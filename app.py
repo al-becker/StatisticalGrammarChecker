@@ -8,7 +8,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-con = psycopg2.connect(database="ngrams", user="postgres", password="postgres", host="localhost", port="5432",
+con = psycopg2.connect(database="ngrams", user="postgres", password="xgqSHThRHP4mOioFVFSh", host="postgres", port="5432",
                        sslmode="disable")
 
 
