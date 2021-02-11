@@ -26,7 +26,7 @@ $(".grammar").click(grammarcheck);
 function grammarcheck() {
     var content = $('#content').text();
     var language = $('#dropdown').val();
-    var request = '/background_check';
+    var request = '/grammar_check';
     $("#app").addClass("loading");
     const data = {"content": content, "language": language}
     fetch(request, {
